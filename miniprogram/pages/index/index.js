@@ -17,9 +17,26 @@ Page({
     sichuanarr: [],
     yunnanarr: [],
     sichuanimg: '',
-    yunnanimg: ""
+    yunnanimg: "",
+    subsidiary:[],
+    scrollshow:false
 
   },
+  onPageScroll(e){
+    //参数e会返回滚动条滚动的高度
+     if(e.scrollTop >= 50){
+        this.setData({
+          scrollshow:true
+        })
+     }else{
+      this.setData({
+        scrollshow:false
+      })
+     }
+    },
+    barnertap(e){
+      console.log(e)
+    },
   onClick(event) {
     wx.setNavigationBarTitle({ //修改顶部菜单标题
       title: event.detail.title
@@ -35,7 +52,6 @@ Page({
         pageshow: false
       })
     }
-
     if (num === 1) {
       let obj = {
         'ids[0]': 1967,
@@ -74,7 +90,7 @@ Page({
 
 
     wx.showToast({
-      title: `点击标签 ${event.detail.name}`,
+      title: `${event.detail.title}`,
       icon: 'none',
     });
   },
@@ -88,7 +104,9 @@ Page({
       data: obj,
       success: res => {
         console.log(res.data.data.list);
-        // this.subsidiary = res.data.data.list;
+        this.setData({
+          subsidiary:res.data.data.list
+        })
       }
     })
   },

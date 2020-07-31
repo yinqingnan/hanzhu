@@ -2,7 +2,6 @@
   "usingComponents": {
     "van-button": "../../miniprogram_npm/vant-weapp/dist/button",
     "van-tab": "../../miniprogram_npm/vant-weapp/dist/tab",
-    "van-tabs": "../../miniprogram_npm/vant-weapp/dist/tabs",
-    "vant-sticky":"../../miniprogram_npm/vant-weapp/dist/sticky"
+    "van-tabs": "../../miniprogram_npm/vant-weapp/dist/tabs"
   }
 }

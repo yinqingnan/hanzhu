@@ -1,2 +1,4 @@
 <!--pages/destination/index.wxml-->
-<text>pages/destination/index.wxml</text>
+<view class="boxtop">
+  <text>目的地</text>
+</view>

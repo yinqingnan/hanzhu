@@ -1,21 +1,22 @@
 <!-- 使用自己封装的金额设置函数 -->
 <wxs module="filter" src="./price.wxs"></wxs>
 <view class="container">
-
+	<view class="homeTitle">
+	<!-- <text class="iconfont icon-icon"></text> -->
+	  首页
+	</view>
 	<view style="width:100%">
-		<van-sticky>
-			<view>
+			<view class="{{scrollshow ? 'xuanfu':''}}"  >
 				<van-tabs bind:click="onClick" sticky animated>
 					<van-tab wx:for="{{navdata}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' title='{{item.name}}'></van-tab>
 				</van-tabs>
 			</view>
-		</van-sticky>
 
 		<!-- 首页界面 -->
-		<view wx-if="{{pageshow}}">
+		<view wx-if="{{pageshow}}" style="{{scrollshow ? 'margin-top:36px' : ''}}" >
 			<view class="page-section page-section-spacing swiper" style="padding:16px 18px">
 				<swiper indicator-dots="true" style="height:200px;" autoplay="true" interval="2000" duration="500" circular="true" indicator-color="#f6f6f6" indicator-active-color="#c04374">
-					<swiper-item wx:for="{{swiperimg}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+					<swiper-item wx:for="{{swiperimg}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' bindtap="barnertap" >
 						<image src="{{item.img.url}}" style="height:100%;width:100%"></image>
 						asd
 					</swiper-item>
@@ -115,9 +116,24 @@
 
 			</view>
 		</view>
-		<!-- 其他页面 -->
-		<view wx:else>
-			辅助页
+		<!-- 其他辅助页页面 -->
+		<view wx:else class="content" style="{{scrollshow ? 'margin-top:36px' : ''}}">
+			<view wx:for="{{subsidiary}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' class="subsidiary">
+				<image src="{{item.img}}"></image>
+				<text>{{item.title}}</text>
+				<text>{{item.subtitle}}</text>
+				<view>
+					<view>
+						<view wx:for="{{item.mark}}" wx:for-index="index" wx:key="index" wx:for-item='el'>
+							{{el.name}}
+						</view>
+					</view>
+
+					<text>￥{{filter.price(item.price)}}起/{{item.unit}}</text>
+
+				</view>
+				<text>{{item.tip_mark}}</text>
+			</view>
 		</view>
 
 	</view>
