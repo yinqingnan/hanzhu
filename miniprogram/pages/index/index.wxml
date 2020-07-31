@@ -1,0 +1,125 @@
+<!-- 使用自己封装的金额设置函数 -->
+<wxs module="filter" src="./price.wxs"></wxs>
+<view class="container">
+
+	<view style="width:100%">
+		<van-sticky>
+			<view>
+				<van-tabs bind:click="onClick" sticky animated>
+					<van-tab wx:for="{{navdata}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' title='{{item.name}}'></van-tab>
+				</van-tabs>
+			</view>
+		</van-sticky>
+
+		<!-- 首页界面 -->
+		<view wx-if="{{pageshow}}">
+			<view class="page-section page-section-spacing swiper" style="padding:16px 18px">
+				<swiper indicator-dots="true" style="height:200px;" autoplay="true" interval="2000" duration="500" circular="true" indicator-color="#f6f6f6" indicator-active-color="#c04374">
+					<swiper-item wx:for="{{swiperimg}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+						<image src="{{item.img.url}}" style="height:100%;width:100%"></image>
+						asd
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="MainNavIcon">
+				<view wx:for="{{MainNavIcon}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+					<image src="{{item.img}}"></image>
+					<text>{{item.label}}</text>
+				</view>
+			</view>
+			<view class="VideNavIcon">
+				<view wx:for="{{VideNavIcon}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+					<image src="{{item.img}}" mode=""></image>
+					<text >{{ item.label }}</text>
+				</view>
+			</view>
+			<view class="box">
+				<view class="Travel">
+					<!-- 旅行日志 -->
+					<image src="{{TravelImg}}"></image>
+					<view>
+						<swiper class="TravelSwiper" previous-margin="10px" next-margin="16px" style="height:340px;" interval="2000" duration="500">
+							<swiper-item class="travelSwiperitem" wx:for="{{TravelArr}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+								<image src="{{item.img.url}}"></image>
+							</swiper-item>
+						</swiper>
+					</view>
+				</view>
+				<!-- 主题推荐 -->
+				<view class="Theme">
+					<image src="{{ThemeImg}}"></image>
+					<view style="margin:10px 0 20px 0">
+						<swiper class="" style="height:190px;" previous-margin="10px" next-margin="16px">
+							<swiper-item class="travelSwiperitem" wx:for="{{ThemeArr}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+								<image src="{{item.img.url}}" style="width: 100%;height: 100%;"></image>
+							</swiper-item>
+						</swiper>
+					</view>
+				</view>
+				<!-- 大牌酒店 -->
+				<view class="Hotel">
+					<image src="{{Hotelimg}}"></image>
+					<view class="hotel">
+						<view wx:for="{{hotelarr}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+							<image src="{{item.img}}"></image>
+							<text>{{ item.title }}</text>
+							<text>{{ item.subtitle }}</text>
+							<view>
+								<view wx:for="{{item.mark}}" wx:for-index="index" wx:key="index" wx:for-item='itemmark'>
+									<view>{{ itemmark.name }}</view>
+								</view>
+							</view>
+							<text>￥{{filter.price(item.price) }}起/人</text>
+							<text>{{ item.tip_mark }}</text>
+						</view>
+					</view>
+				</view>
+
+				<!-- 四川 -->
+				<view class="Hotel">
+					<image src="{{sichuanimg}}"></image>
+					<view class="hotel">
+						<view wx:for="{{sichuanarr}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+							<image src="{{item.img}}"></image>
+							<text>{{ item.title }}</text>
+							<text>{{ item.subtitle }}</text>
+							<view>
+								<view wx:for="{{item.mark}}" wx:for-index="index" wx:key="index" wx:for-item='itemmark'>
+									<view>{{ itemmark.name }}</view>
+								</view>
+							</view>
+							<text>￥{{filter.price(item.price) }}起/人</text>
+							<text>{{ item.tip_mark }}</text>
+						</view>
+					</view>
+				</view>
+				<!-- 云南 -->
+				<view class="Hotel" style="margin-bottom:80px">
+					<image src="{{Hotelimg}}"></image>
+					<view class="hotel">
+						<view wx:for="{{yunnanarr}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item'>
+							<image src="{{item.img}}"></image>
+							<text>{{ item.title }}</text>
+							<text>{{ item.subtitle }}</text>
+							<view>
+								<view wx:for="{{item.mark}}" wx:for-index="index" wx:key="index" wx:for-item='itemmark'>
+									<view>{{ itemmark.name }}</view>
+								</view>
+							</view>
+							<text>￥{{filter.price(item.price) }}起/人</text>
+							<text>{{ item.tip_mark }}</text>
+						</view>
+					</view>
+				</view>
+
+
+			</view>
+		</view>
+		<!-- 其他页面 -->
+		<view wx:else>
+			辅助页
+		</view>
+
+	</view>
+
+</view>

@@ -1,0 +1,335 @@
+/* *index.wxss*
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userinfo, .uploader, .tunnel {
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo {
+  padding-left: 120rpx;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-avatar[size] {
+  width: 100rpx;
+}
+
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 10px;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.userinfo-nickname-wrapper {
+  flex: 1;
+}
+
+.uploader, .tunnel {
+  height: auto;
+  padding: 0 0 0 40rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.uploader-text, .tunnel-text {
+  width: 100%;
+  line-height: 52px;
+  font-size: 34rpx;
+  color: #007aff;
+}
+
+.uploader-container {
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.uploader-image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.tunnel {
+  padding: 0 0 0 40rpx;
+}
+
+.tunnel-text {
+  position: relative;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tunnel-text:first-child {
+  border-top: none;
+}
+
+.tunnel-switch {
+  position: absolute;
+  right: 20rpx;
+  top: -2rpx;
+}
+
+.disable {
+  color: #888;
+}
+
+.service {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: linear-gradient(#007aff, #0063ce);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+
+.service-button {
+  position: absolute;
+  top: 40rpx;
+}
+
+.service:active {
+  box-shadow: none;
+}
+
+.request-text {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  word-break: break-all;
+} */
+.MainNavIcon {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 18px;
+}
+
+.MainNavIcon>view {
+  width: 25%;
+  text-align: center;
+}
+
+.MainNavIcon>view>image {
+  width: 36px;
+  display: block;
+  margin: 0 auto;
+  height: 36px;
+  margin-bottom: 6px;
+}
+
+.MainNavIcon>view>text {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #333;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.VideNavIcon {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 18px;
+}
+
+.VideNavIcon>view {
+  margin: 18px 0;
+  width: 20%;
+  text-align: center;
+  border-right: .5px solid #f0f0f0;
+
+}
+
+.VideNavIcon>view:last-child {
+  border: 0;
+}
+
+.VideNavIcon>view>image {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+.VideNavIcon>view>text {
+  font-family: PingFangSC-Regular;
+  font-size: 10px;
+  color: #333;
+  letter-spacing: .2px;
+  text-align: center;
+}
+
+.box {
+  /* padding: 0 18px; */
+  margin-top: 8px;
+}
+
+.Travel {
+  width: 100%;
+
+}
+
+.Travel>image {
+  vertical-align: top;
+  padding: 0 18px;
+  height: 32px;
+}
+
+.travelSwiperitem {
+  padding-right: 8px;
+}
+
+.travelSwiperitem>image {
+  width: 100%;
+  height: 100%;
+}
+
+.Travel>view {
+  margin: 16px 0 22px 0;
+}
+
+.Theme {
+  width: 100%;
+}
+
+.Theme>image {
+  /* vertical-align: top; */
+  padding: 0 18px;
+  height: 32px;
+}
+
+.Hotel {
+  padding: 0 18px;
+  margin: 12px 0;
+}
+
+.Hotel>image {
+  height: 32px;
+  display: block;
+  vertical-align: top;
+}
+
+.hotel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.hotel>view {
+  width: 48%;
+  position: relative;
+  margin-top: 18rpx;
+}
+
+.hotel>view>image {
+  width: 330rpx;
+  height: 204rpx;
+  display: block;
+}
+
+.hotel>view>text:nth-of-type(1) {
+  font-size: 24rpx;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+}
+.hotel>view>text:nth-of-type(2){
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 6px;
+  font-size: 20rpx;
+}
+.hotel>view>view{
+  display: flex;
+	justify-content: start;
+	flex-wrap: wrap;
+}
+.hotel>view>view>view{
+  font-size: 18rpx;
+  padding: 1px 3px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  color: #c14374;
+  letter-spacing: .2px;
+  border: .5px solid rgba(193,67,116,.2);
+  font-family: PingFangSC-Light;
+}
+.hotel>view>text:nth-of-type(3){
+  white-space: nowrap;
+  font-family: PingFangSC-Medium;
+  color: #c04374;
+  font-size:24rpx;
+  letter-spacing: .3px;
+}
+.hotel>view>text:nth-of-type(4){
+  position: absolute;
+  top: 0;
+  left: 9px;
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  border-radius: 0 0 3px 3px;
+  font-size: 20rpx;
+  padding: 1px 3px;
+}

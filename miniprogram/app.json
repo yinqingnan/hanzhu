@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/destination/index",
+    "pages/customized/index",
+    "pages/find/index",
+    "pages/my/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f9f9f9",
+    "navigationBarTitleText": "憨猪旅游",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "position":"bottom",
+    "selectedColor":"#d93b89",
+    "list": [{
+      "selectedIconPath": "./static/Navimg/indexh.png",
+      "iconPath": "./static/Navimg/index.png",
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },
+    {
+      "selectedIconPath": "./static/Navimg/dwh.png",
+      "iconPath": "./static/Navimg/dw.png",
+      "pagePath": "pages/destination/index",
+      "text": "目的地"
+    },
+    {
+      "selectedIconPath": "./static/Navimg/pigh.png",
+      "iconPath": "./static/Navimg/pig.png",
+      "pagePath": "pages/customized/index",
+      "text": "定制游"
+    },
+    {
+      "selectedIconPath": "./static/Navimg/souh.png",
+      "iconPath": "./static/Navimg/sou.png",
+      "pagePath": "pages/find/index",
+      "text": "发现"
+    },
+    {
+      "selectedIconPath": "./static/Navimg/myh.png",
+      "iconPath": "./static/Navimg/my.png",
+      "pagePath": "pages/my/index",
+      "text": "我的"
+    }]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
