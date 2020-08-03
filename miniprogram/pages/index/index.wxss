@@ -345,7 +345,7 @@ page {
 }
 .subsidiary>image{
   width: 100%;
-  height:420rpx ;
+  height:446rpx ;
   display: block;
   margin-bottom: 18px;
 }
@@ -416,6 +416,7 @@ page {
 }
 
 .homeTitle{
+  width: 100%;
   height: 44px;
   line-height: 44px;
   font-family: PingFangSC-Medium;
@@ -423,4 +424,30 @@ page {
   color: #333;
   letter-spacing: .8px;
   font-weight: 500;
+  /* display: flex;
+  justify-content: space-between; */
+  position: relative;
+  text-align: center;
+}
+
+.homeTitle>view{
+  text-align: center;
+  font-size: 48rpx;
+  color: #898989;
+}
+.homeTitle>view:nth-of-type(1){
+ text-indent: 36rpx;
+ position: absolute;
+ left: 0;
+}
+.homeTitle>view:nth-of-type(2){
+  font-size: 38rpx;
+  color: #333;
+  font-weight: 500;
+}
+.homeTitle>view:nth-of-type(3){
+ position: absolute;
+ right: 28rpx;
+ top: 0;
+ font-size: 50rpx;
 }

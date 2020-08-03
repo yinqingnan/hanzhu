@@ -127,8 +127,8 @@ Page({
     wx.request({
       url: 'https://m.bmtrip.com/api/v3/m1/cms/page/detail?pageId=5da95458b896310cf66ba97f',
       success(res) {
-        console.log(res.data.data.data)
-        console.log(res.data.data.data[7].data)
+        // console.log(res.data.data.data)
+        // console.log(res.data.data.data[7].data)
         that.setData({
           swiperimg: res.data.data.data[0].data,
           TravelImg: res.data.data.data[1].data[0].img.url,
@@ -185,7 +185,7 @@ Page({
         'ids[11]': 2213
       },
       success: res => {
-        console.log(res.data.data.list);
+        // console.log(res.data.data.list);
         let arr = res.data.data.list;
         let hoteldata = []
         let sichuandata = []
@@ -221,19 +221,19 @@ Page({
     this.getImgdata()
     // 获取用户信息
     wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
+      // success: res => {
+      //   if (res.authSetting['scope.userInfo']) {
+      //     // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+      //     wx.getUserInfo({
+      //       success: res => {
+      //         this.setData({
+      //           avatarUrl: res.userInfo.avatarUrl,
+      //           userInfo: res.userInfo
+      //         })
+      //       }
+      //     })
+      //   }
+      // }
     })
   },
 

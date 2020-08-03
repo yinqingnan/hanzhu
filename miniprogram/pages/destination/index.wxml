@@ -1,4 +1,22 @@
 <!--pages/destination/index.wxml-->
 <view class="boxtop">
-  <text>目的地</text>
+	<text>目的地</text>
+</view>
+<view class="box">
+	<view class="boxleft" >
+		<view wx:for="{{citylist}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' bindtap="switchcity" data-id="{{item.id}}" data-index="{{Idx}}" data-city="{{item.label}}">
+			{{item.label}}
+      <view class="{{mainActiveIndex == Idx ? 'active':'cancel'}}"></view>
+		</view>
+
+	</view>
+	<view class="boxright">
+    <view class="boxright_top">
+      <view wx:for="{{DiscountMsg.children}}" wx:for-index="Idx" wx:key="Idx" wx:for-item='item' >
+        <!-- <image src="{{item.img + imgconct }}" wx:if="{{DiscountMsg.children.length > 0}}"></image> -->
+        <!-- <image src="https://product-ssl-qiniu.bmtrip.com/product_5e96a7e4f1bf0.jpg?imageView2/1/format/jpg/interlace/1/q/80" ></image> -->
+      </view>
+    </view>
+    <view class="boxright_bottom"></view>
+  </view>
 </view>
