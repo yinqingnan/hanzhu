@@ -41,7 +41,7 @@ Page({
     wx.setNavigationBarTitle({ //修改顶部菜单标题
       title: event.detail.title
     })
-    console.log(event.detail.name)
+    // console.log(event.detail.name)
     let num = event.detail.name
     if (num === 0) {
       this.setData({
@@ -94,6 +94,15 @@ Page({
       icon: 'none',
     });
   },
+    // tabbar事件
+    onTabItemTap(item) {
+      // 可以在此做自己需求的逻辑操作，如点击出现弹窗等
+      // console.log(item.text)
+      wx.setNavigationBarTitle({ //修改顶部菜单标题
+        title: '憨猪旅游'
+      })
+    },
+
   switchpage(obj) {
     wx.request({
       url: 'https://m.bmtrip.com/api/v3/m1/product/list/by_ids',

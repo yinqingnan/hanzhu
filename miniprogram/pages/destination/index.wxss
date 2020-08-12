@@ -42,6 +42,11 @@
   height: calc(100vh - 44px);
 
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 
 .boxleft>view {
   position: relative;

@@ -75,11 +75,11 @@ Page({
     if (this.data.textstate == '查看更多') {
       this.setData({
         height: 'auto',
-        textstate:'点击收起'
+        textstate: '点击收起'
       })
-    }else{
+    } else {
       this.setData({
-        textstate:'查看更多'
+        textstate: '查看更多'
       })
       if (this.data.DiscountMsg.children.length <= 2) {
         this.setData({
@@ -92,6 +92,14 @@ Page({
       }
     }
 
+  },
+  // tabbar事件
+  onTabItemTap(item) {
+    // 可以在此做自己需求的逻辑操作，如点击出现弹窗等
+    // console.log(item.text)
+    wx.setNavigationBarTitle({ //修改顶部菜单标题
+      title: item.text
+    })
   },
 
   /**
