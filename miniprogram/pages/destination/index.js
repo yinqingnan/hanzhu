@@ -47,7 +47,8 @@ Page({
     let city = e.target.dataset.city
     let id = e.target.dataset.id
     this.setData({
-      mainActiveIndex: index
+      mainActiveIndex: index,
+      textstate: '查看更多'
     })
     console.log(city)
 
