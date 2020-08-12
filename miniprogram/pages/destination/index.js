@@ -5,9 +5,11 @@ Page({
    */
   data: {
     mainActiveIndex: 0,
-    citylist:[],
-    DiscountMsg:[],
-    imgconct:'?imageView2/1/format/jpg/interlace/1/q/80'
+    citylist: [],
+    DiscountMsg: [],
+    imgconct: '?imageView2/1/format/jpg/interlace/1/q/80',
+    height: '174rpx',
+    textstate: '查看更多'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -22,31 +24,74 @@ Page({
         console.log(res.data.data.list)
         that.setData({
           citylist: res.data.data.list,
-          DiscountMsg:res.data.data.list[0]
+          DiscountMsg: res.data.data.list[0]
         })
-        console.log(that.data.DiscountMsg)
+        // console.log(res.data.data.list[0])
+        if (res.data.data.list[0].length <= 2) {
+          that.setData({
+            height: '174rpx'
+          })
+        } else if (res.data.data.list[0].length >= 2) {
+          that.setData({
+            height: '328rpx'
+          })
+        }
       }
       // 
     });
     console.log(this.data.mainActiveIndex)
 
   },
-  switchcity(e){
+  switchcity(e) {
     let index = e.target.dataset.index
     let city = e.target.dataset.city
     let id = e.target.dataset.id
     this.setData({
-      mainActiveIndex:index
+      mainActiveIndex: index
     })
     console.log(city)
-   
-    let data = this.data.citylist.filter(item=>{
-     return item.id == id
+
+    let data = this.data.citylist.filter(item => {
+      return item.id == id
     })
     this.setData({
-      DiscountMsg:data
+      DiscountMsg: data[0]
     })
     console.log(this.data.DiscountMsg)
+    if (data[0].children.length <= 2) {
+      this.setData({
+        height: '174rpx'
+      })
+    } else if (data[0].children.length >= 2) {
+      this.setData({
+        height: '328rpx'
+      })
+    }
+
+    // console.log(data[0])
+  },
+  // 查看更多
+  more() {
+    if (this.data.textstate == '查看更多') {
+      this.setData({
+        height: 'auto',
+        textstate:'点击收起'
+      })
+    }else{
+      this.setData({
+        textstate:'查看更多'
+      })
+      if (this.data.DiscountMsg.children.length <= 2) {
+        this.setData({
+          height: '174rpx'
+        })
+      } else if (this.data.DiscountMsg.children.length >= 2) {
+        this.setData({
+          height: '328rpx'
+        })
+      }
+    }
+
   },
 
   /**

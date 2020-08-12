@@ -24,10 +24,10 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"bundle": true,
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"bundle": true
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx0d8b88f343cf8f8b",
 	"projectname": "miniprogram-1",
